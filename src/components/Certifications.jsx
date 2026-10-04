@@ -1,8 +1,16 @@
 import { motion } from 'framer-motion';
-import { ShieldCheck, Cloud, BrainCircuit, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Cloud, BrainCircuit, CheckCircle2, Layers } from 'lucide-react';
 import TiltCard3D from './TiltCard3D';
 
 const certifications = [
+  {
+    title: "SAP Certified - Back-End Developer - ABAP Cloud",
+    code: "ABAP Cloud",
+    issuer: "SAP",
+    icon: <Layers className="text-cyan-500 dark:text-cyan-400" size={36} />,
+    color: "from-cyan-600/15 via-blue-500/10 to-transparent",
+    borderHover: "hover:border-cyan-500/50"
+  },
   {
     title: "Microsoft Azure Fundamentals",
     code: "AZ-900",
@@ -46,27 +54,27 @@ export default function Certifications() {
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {certifications.map((cert, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.15 }}
+              transition={{ delay: index * 0.12 }}
             >
-              <TiltCard3D maxTilt={12} scale={1.04}>
+              <TiltCard3D maxTilt={10} scale={1.03} className="h-full">
                 <div
-                  className={`glass-panel p-8 sm:p-10 rounded-3xl overflow-hidden relative group cursor-default transition-all duration-300 ${cert.borderHover}`}
+                  className={`glass-panel p-8 rounded-3xl overflow-hidden relative group cursor-default transition-all duration-300 h-full flex flex-col justify-between ${cert.borderHover}`}
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${cert.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}></div>
 
-                  <div className="relative z-10 flex items-start space-x-6">
+                  <div className="relative z-10 flex items-start space-x-5">
                     <div className="p-4 bg-[var(--badge-bg)] border border-[var(--badge-border)] rounded-2xl shadow-inner shrink-0 group-hover:scale-110 transition-all duration-300">
                       {cert.icon}
                     </div>
                     <div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)] mb-2 leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors">
+                      <h3 className="text-lg sm:text-xl font-bold text-[var(--text-primary)] mb-2 leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors">
                         {cert.title}
                       </h3>
                       <div className="flex flex-wrap items-center gap-2 text-[var(--text-secondary)] text-sm font-medium">

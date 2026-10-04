@@ -21,7 +21,7 @@ const achievements = [
   },
   {
     title: "Cloud & AI Professional Certifications",
-    description: "Earned Microsoft Azure Fundamentals (AZ-900) and Oracle OCI AI Foundations Associate certifications.",
+    description: "Earned SAP Certified Back-End Developer (ABAP Cloud), Microsoft Azure Fundamentals (AZ-900), and Oracle OCI AI Foundations Associate certifications.",
     icon: <Award className="text-purple-500 dark:text-purple-400" size={26} />,
     date: "2024",
     border: "hover:border-purple-500/40",
