@@ -11,34 +11,37 @@ import Footer from './components/Footer';
 import Background3D from './components/Background3D';
 import CursorGlow3D from './components/CursorGlow3D';
 import SmoothScroll from './components/SmoothScroll';
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   return (
-    <SmoothScroll>
-      <div className="bg-[#050505] min-h-screen text-gray-200 selection:bg-purple-500/30 font-sans antialiased overflow-x-hidden relative">
-        {/* 3D WebGL Background Star Universe */}
-        <Background3D />
+    <ThemeProvider>
+      <SmoothScroll>
+        <div className="min-h-screen selection:bg-purple-500/30 font-sans antialiased overflow-x-hidden relative transition-colors duration-500">
+          {/* 3D WebGL Background Star Universe */}
+          <Background3D />
 
-        {/* 3D Dynamic Cursor Glow Follower */}
-        <CursorGlow3D />
+          {/* 3D Dynamic Cursor Glow Follower */}
+          <CursorGlow3D />
 
-        {/* Main Content */}
-        <div className="relative z-10">
-          <Navbar />
-          <main>
-            <Hero />
-            <About />
-            <Skills />
-            <Projects />
-            <Achievements />
-            <Education />
-            <Certifications />
-            <Contact />
-          </main>
-          <Footer />
+          {/* Main Content */}
+          <div className="relative z-10">
+            <Navbar />
+            <main>
+              <Hero />
+              <About />
+              <Skills />
+              <Projects />
+              <Achievements />
+              <Education />
+              <Certifications />
+              <Contact />
+            </main>
+            <Footer />
+          </div>
         </div>
-      </div>
-    </SmoothScroll>
+      </SmoothScroll>
+    </ThemeProvider>
   );
 }
 

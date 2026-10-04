@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Send, CheckCircle, AlertCircle, Loader2, MessageSquare } from 'lucide-react';
-import TiltCard3D from './TiltCard3D';
 
 const GithubIcon = ({ size = 24 }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -93,7 +92,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-3"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold uppercase tracking-wider mb-3"
           >
             <MessageSquare size={13} />
             <span>Get in Touch</span>
@@ -107,7 +106,7 @@ export default function Contact() {
             Let's Build Something <span className="gradient-text">Together</span>
           </motion.h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-300/80 max-w-2xl mx-auto text-base sm:text-lg">
+          <p className="text-[var(--text-secondary)] max-w-2xl mx-auto text-base sm:text-lg">
             Have a question, opportunity, or idea? Feel free to reach out, and your message will land straight in my inbox!
           </p>
         </div>
@@ -120,42 +119,59 @@ export default function Contact() {
             viewport={{ once: true }}
             className="lg:col-span-5"
           >
-            <TiltCard3D maxTilt={8} scale={1.02}>
-              <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/10 space-y-8 bg-gradient-to-b from-white/[0.05] to-black/50 shadow-2xl">
-                <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
-                <div className="space-y-6">
-                  <a href="mailto:ankitkumararwal24@gmail.com" className="flex items-center space-x-4 group p-3 rounded-2xl hover:bg-white/5 transition-all">
-                    <div className="p-3.5 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-2xl group-hover:scale-110 group-hover:bg-blue-500/20 transition-all">
-                      <Mail size={22} />
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider">Email</p>
-                      <p className="text-white font-medium text-sm sm:text-base group-hover:text-blue-400 transition-colors">ankitkumararwal24@gmail.com</p>
-                    </div>
-                  </a>
-                  
-                  <a href="https://www.linkedin.com/in/ankitkumar77a/" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 group p-3 rounded-2xl hover:bg-white/5 transition-all">
-                    <div className="p-3.5 bg-purple-500/10 text-purple-400 border border-purple-500/20 rounded-2xl group-hover:scale-110 group-hover:bg-purple-500/20 transition-all">
-                      <LinkedinIcon size={22} />
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider">LinkedIn</p>
-                      <p className="text-white font-medium text-sm sm:text-base group-hover:text-purple-400 transition-colors">linkedin.com/in/ankitkumar77a</p>
-                    </div>
-                  </a>
+            <div className="glass-panel p-8 sm:p-10 rounded-3xl space-y-8 shadow-2xl hover:border-blue-500/30 transition-all duration-300">
+              <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-6">Contact Information</h3>
+              <div className="space-y-4">
+                <a
+                  href="mailto:ankitkumararwal24@gmail.com"
+                  className="flex items-center space-x-4 group p-3.5 rounded-2xl bg-[var(--badge-bg)] border border-[var(--badge-border)] hover:border-blue-500/40 hover:bg-slate-100 dark:hover:bg-white/10 transition-all cursor-pointer shadow-sm"
+                >
+                  <div className="p-3.5 bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 rounded-2xl group-hover:scale-110 group-hover:bg-blue-500/20 transition-all shrink-0">
+                    <Mail size={22} />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-xs text-[var(--text-muted)] font-semibold uppercase tracking-wider">Email</p>
+                    <p className="text-[var(--text-primary)] font-medium text-sm sm:text-base group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors truncate">
+                      ankitkumararwal24@gmail.com
+                    </p>
+                  </div>
+                </a>
+                
+                <a
+                  href="https://www.linkedin.com/in/ankitkumar77a/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-4 group p-3.5 rounded-2xl bg-[var(--badge-bg)] border border-[var(--badge-border)] hover:border-purple-500/40 hover:bg-slate-100 dark:hover:bg-white/10 transition-all cursor-pointer shadow-sm"
+                >
+                  <div className="p-3.5 bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20 rounded-2xl group-hover:scale-110 group-hover:bg-purple-500/20 transition-all shrink-0">
+                    <LinkedinIcon size={22} />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-xs text-[var(--text-muted)] font-semibold uppercase tracking-wider">LinkedIn</p>
+                    <p className="text-[var(--text-primary)] font-medium text-sm sm:text-base group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors truncate">
+                      linkedin.com/in/ankitkumar77a
+                    </p>
+                  </div>
+                </a>
 
-                  <a href="https://github.com/Ankitarwal" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 group p-3 rounded-2xl hover:bg-white/5 transition-all">
-                    <div className="p-3.5 bg-pink-500/10 text-pink-400 border border-pink-500/20 rounded-2xl group-hover:scale-110 group-hover:bg-pink-500/20 transition-all">
-                      <GithubIcon size={22} />
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-400 font-semibold uppercase tracking-wider">GitHub</p>
-                      <p className="text-white font-medium text-sm sm:text-base group-hover:text-pink-400 transition-colors">github.com/Ankitarwal</p>
-                    </div>
-                  </a>
-                </div>
+                <a
+                  href="https://github.com/Ankitarwal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-4 group p-3.5 rounded-2xl bg-[var(--badge-bg)] border border-[var(--badge-border)] hover:border-pink-500/40 hover:bg-slate-100 dark:hover:bg-white/10 transition-all cursor-pointer shadow-sm"
+                >
+                  <div className="p-3.5 bg-pink-500/10 text-pink-600 dark:text-pink-400 border border-pink-500/20 rounded-2xl group-hover:scale-110 group-hover:bg-pink-500/20 transition-all shrink-0">
+                    <GithubIcon size={22} />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-xs text-[var(--text-muted)] font-semibold uppercase tracking-wider">GitHub</p>
+                    <p className="text-[var(--text-primary)] font-medium text-sm sm:text-base group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors truncate">
+                      github.com/Ankitarwal
+                    </p>
+                  </div>
+                </a>
               </div>
-            </TiltCard3D>
+            </div>
           </motion.div>
 
           {/* Contact Form (7 cols) */}
@@ -166,11 +182,11 @@ export default function Contact() {
             className="lg:col-span-7 relative z-20"
           >
             <form
-              className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/10 space-y-6 shadow-2xl bg-gradient-to-b from-white/[0.05] to-black/50 hover:border-blue-500/30 transition-colors duration-300"
+              className="glass-panel p-8 sm:p-10 rounded-3xl space-y-6 shadow-2xl hover:border-blue-500/30 transition-colors duration-300"
               onSubmit={handleSubmit}
             >
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-gray-300 mb-2 cursor-pointer">
+                <label htmlFor="name" className="block text-sm font-semibold text-[var(--text-primary)] mb-2 cursor-pointer">
                   Your Name
                 </label>
                 <input
@@ -180,13 +196,13 @@ export default function Contact() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full bg-[#0a0a0f] border border-white/15 rounded-2xl px-5 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all cursor-text"
+                  className="w-full bg-[var(--input-bg)] border border-[var(--input-border)] rounded-2xl px-5 py-3.5 text-[var(--input-text)] placeholder-[var(--input-placeholder)] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all cursor-text shadow-sm"
                   placeholder="e.g. John Doe"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-300 mb-2 cursor-pointer">
+                <label htmlFor="email" className="block text-sm font-semibold text-[var(--text-primary)] mb-2 cursor-pointer">
                   Your Email
                 </label>
                 <input
@@ -196,13 +212,13 @@ export default function Contact() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full bg-[#0a0a0f] border border-white/15 rounded-2xl px-5 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all cursor-text"
+                  className="w-full bg-[var(--input-bg)] border border-[var(--input-border)] rounded-2xl px-5 py-3.5 text-[var(--input-text)] placeholder-[var(--input-placeholder)] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all cursor-text shadow-sm"
                   placeholder="e.g. john@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-300 mb-2 cursor-pointer">
+                <label htmlFor="message" className="block text-sm font-semibold text-[var(--text-primary)] mb-2 cursor-pointer">
                   Your Message
                 </label>
                 <textarea
@@ -212,7 +228,7 @@ export default function Contact() {
                   rows="4"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full bg-[#0a0a0f] border border-white/15 rounded-2xl px-5 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none cursor-text"
+                  className="w-full bg-[var(--input-bg)] border border-[var(--input-border)] rounded-2xl px-5 py-3.5 text-[var(--input-text)] placeholder-[var(--input-placeholder)] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none cursor-text shadow-sm"
                   placeholder="Tell me about your project, idea, or inquiry..."
                 ></textarea>
               </div>
@@ -222,9 +238,9 @@ export default function Contact() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="flex items-center gap-3 p-4 bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 rounded-2xl text-sm font-medium"
+                  className="flex items-center gap-3 p-4 bg-emerald-500/15 border border-emerald-500/30 text-emerald-700 dark:text-emerald-300 rounded-2xl text-sm font-medium"
                 >
-                  <CheckCircle size={20} className="shrink-0 text-emerald-400" />
+                  <CheckCircle size={20} className="shrink-0 text-emerald-500 dark:text-emerald-400" />
                   <span>{status.message}</span>
                 </motion.div>
               )}
@@ -233,9 +249,9 @@ export default function Contact() {
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="flex items-center gap-3 p-4 bg-rose-500/15 border border-rose-500/30 text-rose-300 rounded-2xl text-sm font-medium"
+                  className="flex items-center gap-3 p-4 bg-rose-500/15 border border-rose-500/30 text-rose-700 dark:text-rose-300 rounded-2xl text-sm font-medium"
                 >
-                  <AlertCircle size={20} className="shrink-0 text-rose-400" />
+                  <AlertCircle size={20} className="shrink-0 text-rose-500 dark:text-rose-400" />
                   <span>{status.message}</span>
                 </motion.div>
               )}

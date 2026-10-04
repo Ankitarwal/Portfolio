@@ -7,16 +7,16 @@ const certifications = [
     title: "Microsoft Azure Fundamentals",
     code: "AZ-900",
     issuer: "Microsoft",
-    icon: <Cloud className="text-blue-400" size={36} />,
-    color: "from-blue-600/25 via-blue-500/10 to-transparent",
+    icon: <Cloud className="text-blue-500 dark:text-blue-400" size={36} />,
+    color: "from-blue-600/15 via-blue-500/10 to-transparent",
     borderHover: "hover:border-blue-500/50"
   },
   {
     title: "OCI AI Foundations Associate",
     code: "1Z0-1122-24",
     issuer: "Oracle",
-    icon: <BrainCircuit className="text-red-400" size={36} />,
-    color: "from-red-600/25 via-red-500/10 to-transparent",
+    icon: <BrainCircuit className="text-red-500 dark:text-red-400" size={36} />,
+    color: "from-red-600/15 via-red-500/10 to-transparent",
     borderHover: "hover:border-red-500/50"
   }
 ];
@@ -30,7 +30,7 @@ export default function Certifications() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-3"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold uppercase tracking-wider mb-3"
           >
             <CheckCircle2 size={13} />
             <span>Credentials</span>
@@ -57,25 +57,25 @@ export default function Certifications() {
             >
               <TiltCard3D maxTilt={12} scale={1.04}>
                 <div
-                  className={`glass-panel p-8 sm:p-10 rounded-3xl overflow-hidden relative group cursor-default transition-all duration-300 border border-white/10 ${cert.borderHover}`}
+                  className={`glass-panel p-8 sm:p-10 rounded-3xl overflow-hidden relative group cursor-default transition-all duration-300 ${cert.borderHover}`}
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${cert.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}></div>
 
                   <div className="relative z-10 flex items-start space-x-6">
-                    <div className="p-4 bg-white/5 rounded-2xl shadow-inner shrink-0 group-hover:scale-110 group-hover:bg-white/10 transition-all duration-300 border border-white/5">
+                    <div className="p-4 bg-[var(--badge-bg)] border border-[var(--badge-border)] rounded-2xl shadow-inner shrink-0 group-hover:scale-110 transition-all duration-300">
                       {cert.icon}
                     </div>
                     <div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 leading-tight group-hover:text-blue-300 transition-colors">
+                      <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-primary)] mb-2 leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors">
                         {cert.title}
                       </h3>
-                      <div className="flex flex-wrap items-center gap-2 text-gray-300 text-sm font-medium">
-                        <span className="flex items-center gap-1 text-emerald-400">
+                      <div className="flex flex-wrap items-center gap-2 text-[var(--text-secondary)] text-sm font-medium">
+                        <span className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-semibold">
                           <ShieldCheck size={16} />
                           <span>{cert.issuer}</span>
                         </span>
-                        <span className="text-gray-600">•</span>
-                        <span className="bg-white/10 border border-white/10 px-2.5 py-0.5 rounded-lg text-xs font-mono text-gray-300">
+                        <span className="text-slate-400">•</span>
+                        <span className="bg-[var(--badge-bg)] border border-[var(--badge-border)] px-2.5 py-0.5 rounded-lg text-xs font-mono text-[var(--text-primary)]">
                           {cert.code}
                         </span>
                       </div>

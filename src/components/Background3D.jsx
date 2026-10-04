@@ -202,7 +202,8 @@ export default function Background3D() {
     <div
       ref={containerRef}
       aria-hidden="true"
-      className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-80"
+      style={{ opacity: 'var(--canvas-opacity, 0.8)' }}
+      className="fixed inset-0 pointer-events-none z-0 overflow-hidden transition-opacity duration-500"
     />
   );
 }

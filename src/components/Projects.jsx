@@ -18,7 +18,7 @@ const projects = [
     live: "https://scam-shield-ai-alpha.vercel.app/",
     featured: true,
     icon: <ShieldAlert size={26} />,
-    accent: "from-cyan-600/25 via-blue-600/15 to-transparent",
+    accent: "from-cyan-600/15 via-blue-600/10 to-transparent",
   },
   {
     title: "Stock Trading Platform",
@@ -28,7 +28,7 @@ const projects = [
     live: "#",
     featured: true,
     icon: <Code2 size={26} />,
-    accent: "from-blue-600/25 via-purple-600/15 to-transparent",
+    accent: "from-blue-600/15 via-purple-600/10 to-transparent",
   },
   {
     title: "Simon Says Interactive Game",
@@ -38,7 +38,7 @@ const projects = [
     live: "#",
     featured: false,
     icon: <Code2 size={26} />,
-    accent: "from-purple-600/25 via-pink-600/15 to-transparent",
+    accent: "from-purple-600/15 via-pink-600/10 to-transparent",
   }
 ];
 
@@ -51,7 +51,7 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-3"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold uppercase tracking-wider mb-3"
           >
             <Layers size={13} />
             <span>Portfolio</span>
@@ -77,33 +77,29 @@ export default function Projects() {
               transition={{ duration: 0.5, delay: index * 0.12 }}
             >
               <TiltCard3D maxTilt={9} scale={1.03} className="h-full">
-                <div
-                  className={`glass-panel p-8 rounded-3xl flex flex-col justify-between h-full relative group border border-white/10 hover:border-cyan-500/50 transition-all duration-300 overflow-hidden ${
-                    project.featured ? "bg-gradient-to-b from-white/[0.07] to-white/[0.02]" : ""
-                  }`}
-                >
+                <div className="glass-panel p-8 rounded-3xl flex flex-col justify-between h-full relative group transition-all duration-300 overflow-hidden">
                   {/* Dynamic 3D ambient glow */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl`}></div>
 
                   <div>
                     {/* Header info */}
                     <div className="flex items-center justify-between gap-4 mb-6 relative z-10">
-                      <div className="p-3.5 bg-white/5 rounded-2xl text-cyan-400 group-hover:bg-cyan-500/20 group-hover:text-cyan-300 group-hover:scale-110 transition-all duration-300 shadow-inner">
+                      <div className="p-3.5 bg-[var(--badge-bg)] border border-[var(--badge-border)] rounded-2xl text-blue-600 dark:text-cyan-400 group-hover:scale-110 transition-all duration-300 shadow-inner">
                         {project.icon}
                       </div>
                       {project.featured && (
-                        <span className="inline-flex items-center gap-1.5 bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 text-xs font-bold px-3 py-1 rounded-full shadow-lg shadow-cyan-500/10">
+                        <span className="inline-flex items-center gap-1.5 bg-blue-500/15 border border-blue-500/30 text-blue-600 dark:text-cyan-300 text-xs font-bold px-3 py-1 rounded-full shadow-sm">
                           <Sparkles size={13} />
                           Featured
                         </span>
                       )}
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-4 group-hover:text-cyan-300 transition-colors relative z-10 leading-snug">
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-[var(--text-primary)] mb-4 group-hover:text-blue-600 dark:group-hover:text-cyan-300 transition-colors relative z-10 leading-snug">
                       {project.title}
                     </h3>
 
-                    <p className="text-gray-300 text-sm leading-relaxed mb-6 relative z-10">
+                    <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-6 relative z-10">
                       {project.description}
                     </p>
                   </div>
@@ -114,7 +110,7 @@ export default function Projects() {
                       {project.tags.map((tag, idx) => (
                         <span
                           key={idx}
-                          className="px-3 py-1 text-xs font-semibold text-cyan-300 bg-cyan-500/10 border border-cyan-500/30 rounded-xl hover:bg-cyan-500/20 transition-colors"
+                          className="px-3 py-1 text-xs font-semibold text-blue-700 dark:text-cyan-300 bg-blue-50 dark:bg-cyan-500/10 border border-blue-200 dark:border-cyan-500/30 rounded-xl"
                         >
                           {tag}
                         </span>
@@ -122,14 +118,14 @@ export default function Projects() {
                     </div>
 
                     {/* Action buttons */}
-                    <div className="flex flex-wrap gap-3 pt-5 border-t border-white/10 relative z-10">
+                    <div className="flex flex-wrap gap-3 pt-5 border-t border-[var(--nav-border)] relative z-10">
                       <motion.a
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 text-white px-4 py-2 rounded-xl text-xs sm:text-sm font-bold shadow-lg shadow-cyan-500/20 hover:from-cyan-500 hover:to-purple-500 transition-all"
+                        className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white px-4 py-2 rounded-xl text-xs sm:text-sm font-bold shadow-lg shadow-blue-500/20 hover:from-blue-500 hover:to-purple-500 transition-all"
                       >
                         <ExternalLink size={15} />
                         <span>Live Demo</span>
@@ -140,7 +136,7 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/15 text-white px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border border-white/10"
+                        className="inline-flex items-center gap-2 bg-[var(--badge-bg)] hover:bg-slate-200 dark:hover:bg-white/15 text-[var(--text-primary)] px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all border border-[var(--badge-border)]"
                       >
                         <GithubIcon />
                         <span>GitHub</span>

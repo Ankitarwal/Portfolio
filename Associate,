@@ -1,0 +1,42 @@
+[33mcommit fb073e0678314b8efe74d2ad3b13ae478e162888[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Ankit kumar <ankitkumararwal24@gmail.com>
+Date:   Fri Oct 2 02:02:10 2026 +0530
+
+    updated
+
+[1mdiff --git a/.env.example b/.env.example[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5c2b6b6[m
+[1m--- /dev/null[m
+[1m+++ b/.env.example[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32mVITE_WEB3FORMS_ACCESS_KEY=your_access_key_here[m
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mindex a547bf3..6fe064a 100644[m
+[1m--- a/.gitignore[m
+[1m+++ b/.gitignore[m
+[36m@@ -12,6 +12,11 @@[m [mdist[m
+ dist-ssr[m
+ *.local[m
+ [m
+[32m+[m[32m# Environment variables[m
+[32m+[m[32m.env[m
+[32m+[m[32m.env.*[m
+[32m+[m[32m!.env.example[m
+[32m+[m
+ # Editor directories and files[m
+ .vscode/*[m
+ !.vscode/extensions.json[m
+[1mdiff --git a/src/components/Contact.jsx b/src/components/Contact.jsx[m
+[1mindex c5b6f98..29d546f 100644[m
+[1m--- a/src/components/Contact.jsx[m
+[1m+++ b/src/components/Contact.jsx[m
+[36m@@ -51,7 +51,7 @@[m [mexport default function Contact() {[m
+           Accept: "application/json",[m
+         },[m
+         body: JSON.stringify({[m
+[31m-          access_key: "5ffc69bb-1d05-4e25-bbcb-d29893822d71",[m
+[32m+[m[32m          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,[m
+           name: formData.name,[m
+           email: formData.email,[m
+           message: formData.message,[m
