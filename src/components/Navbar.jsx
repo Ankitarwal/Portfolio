@@ -36,7 +36,10 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <a href="#home" className="text-2xl font-extrabold tracking-tighter flex items-center gap-1.5 group">
+          <a href="#home" className="text-xl sm:text-2xl font-extrabold tracking-tighter flex items-center gap-2.5 group">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border-2 border-blue-500/50 shadow-md group-hover:scale-105 transition-transform shrink-0">
+              <img src="/profile.jpg" alt="Ankit" className="w-full h-full object-cover object-top" />
+            </div>
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 group-hover:scale-105 transition-transform">
               Ankit
             </span>

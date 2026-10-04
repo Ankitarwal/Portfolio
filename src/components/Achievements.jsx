@@ -1,31 +1,31 @@
 import { motion } from 'framer-motion';
-import { Award, Code, Zap, Trophy } from 'lucide-react';
+import { Code, Zap, Trophy } from 'lucide-react';
 import TiltCard3D from './TiltCard3D';
 
 const achievements = [
   {
-    title: "Smart India Hackathon 2025",
-    description: "Successfully qualified the college-level internal hackathon round of SIH 2025, innovating with a talented team.",
-    icon: <Zap className="text-amber-500 dark:text-amber-400" size={26} />,
-    date: "2024",
+    title: "Campulsy Hack Days 2026",
+    description: "Secured 2nd Place at Campulsy Hack Days 2026, building an innovative solution and competing against competitive developer teams.",
+    icon: <Trophy className="text-amber-500 dark:text-yellow-400" size={26} />,
+    date: "2026",
     border: "hover:border-amber-500/40",
-    gradient: "from-amber-500/10 via-transparent to-transparent",
+    gradient: "from-amber-500/15 via-transparent to-transparent",
   },
   {
-    title: "Competitive Programming Mastery",
-    description: "Solved 400+ algorithmic problems on CodeChef and 90+ problems on GeeksForGeeks. Actively honing problem-solving skills on LeetCode.",
-    icon: <Code className="text-blue-500 dark:text-blue-400" size={26} />,
-    date: "Ongoing",
+    title: "Smart India Hackathon 2025",
+    description: "Successfully qualified the college-level internal hackathon round of SIH 2025, innovating with a talented team.",
+    icon: <Zap className="text-blue-500 dark:text-blue-400" size={26} />,
+    date: "2024",
     border: "hover:border-blue-500/40",
     gradient: "from-blue-500/10 via-transparent to-transparent",
   },
   {
-    title: "Cloud & AI Professional Certifications",
-    description: "Earned SAP Certified Back-End Developer (ABAP Cloud), Microsoft Azure Fundamentals (AZ-900), and Oracle OCI AI Foundations Associate certifications.",
-    icon: <Award className="text-purple-500 dark:text-purple-400" size={26} />,
-    date: "2024",
-    border: "hover:border-purple-500/40",
-    gradient: "from-purple-500/10 via-transparent to-transparent",
+    title: "Competitive Programming Mastery",
+    description: "Solved 400+ algorithmic problems on CodeChef and 90+ problems on GeeksForGeeks. Actively honing problem-solving skills on LeetCode.",
+    icon: <Code className="text-emerald-500 dark:text-emerald-400" size={26} />,
+    date: "Ongoing",
+    border: "hover:border-emerald-500/40",
+    gradient: "from-emerald-500/10 via-transparent to-transparent",
   }
 ];
 
@@ -61,7 +61,7 @@ export default function Achievements() {
               initial={{ opacity: 0, x: -25 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.15 }}
+              transition={{ delay: index * 0.12 }}
             >
               <TiltCard3D maxTilt={7} scale={1.02}>
                 <div
